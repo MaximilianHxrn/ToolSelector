@@ -1,3 +1,8 @@
+Add-Type -AssemblyName System.Windows.Forms
+[System.Windows.Forms.MessageBox]::Show("Under Construction...","Information",0) 
+exit
+
+
 $folder = $args[0]
 
 # --------------------------------------------------------------
