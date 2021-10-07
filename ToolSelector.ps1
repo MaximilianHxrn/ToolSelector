@@ -1,8 +1,3 @@
-Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.MessageBox]::Show("Under Construction...","Information",0) 
-exit
-
-
 $folder = $args[0]
 
 # --------------------------------------------------------------
@@ -22,7 +17,7 @@ $Formatter.Location = New-Object System.Drawing.Size(20, 10)
 $Formatter.Size = New-Object System.Drawing.Size(220, 25)
 $Formatter.Add_Click({
     Set-Location "\\sitsrv061\WinFrame\Transfer\cir.al\StandaloneDevTools\TxtFormatter"
-    .\Format-Repository.ps1
+    .\Format-Repository.ps1 $folder
 })
 
 # --------------------------------------------------------------
