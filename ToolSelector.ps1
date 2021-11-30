@@ -38,8 +38,16 @@ $FieldAdder.Text = "Field Adder"
 $FieldAdder.Location = New-Object System.Drawing.Size(20, 60)
 $FieldAdder.Size = New-Object System.Drawing.Size(220, 25)
 $FieldAdder.Add_Click({
-    Set-Location "\\sitsrv061\WinFrame\Transfer\cir.al\StandaloneDevTools\FieldAdder"
-    .\FieldAdder.ps1 $folder
+    [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") | Out-Null
+    $foldername = New-Object System.Windows.Forms.FolderBrowserDialog
+    $foldername.Description = "Select a folder"
+    $foldername.rootfolder = "MyComputer"
+    $foldername.SelectedPath = $startFolder
+    if ($foldername.ShowDialog() -eq "OK") {
+        Set-Location "\\sitsrv061\WinFrame\Transfer\cir.al\StandaloneDevTools\FieldAdder"
+        $folder += $foldername.SelectedPath
+        .\FieldAdder.ps1 $folder
+    }
 })
 
 # --------------------------------------------------------------
@@ -58,4 +66,7 @@ $form.Add_KeyDown{
         $Form.close()
     }
 }
+$form.FormBorderStyle = 'FixedDialog';
+$form.MaximizeBox = $false;
+$form.MinimizeBox = $false;
 $result = $form.ShowDialog()
