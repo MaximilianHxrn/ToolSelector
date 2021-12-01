@@ -30,3 +30,4 @@
 *.exe
 *.out
 *.app
+create_exe.ps1

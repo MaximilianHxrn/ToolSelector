@@ -1,1 +1,0 @@
-ps2exe -inputFile "ToolSelector.ps1" -outputFile "ToolSelector.exe" -noConsole

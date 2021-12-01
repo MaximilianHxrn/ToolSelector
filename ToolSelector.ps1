@@ -6,7 +6,7 @@ Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 $form = New-Object System.Windows.Forms.Form
 $form.Text = 'Tool Selector'
-$form.Size = New-Object System.Drawing.Size(280, 135)
+$form.Size = New-Object System.Drawing.Size(275, 135)
 $form.StartPosition = 'CenterScreen'
 
 # --------------------------------------------------------------
